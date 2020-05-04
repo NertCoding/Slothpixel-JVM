@@ -264,7 +264,7 @@ class Slothpixel {
      */
     @JvmOverloads
     fun getPastSkyblockAuctions(itemId: String, from: Long = TimeUtil.yesterday(), to: Long = TimeUtil.now()): PastSkyblockAuctions {
-        val jsonUrl = "$url/skyblock/auctions/$itemId?from=$from&to=$to"
+        val jsonUrl = "$url/skyblock/auctions/$itemId?from=now-1d"
         val json = getFromUrl(jsonUrl)
         return Gson().fromJson(json, PastSkyblockAuctions::class.java)
     }
